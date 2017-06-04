@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 1000px;
+            margin: 0 auto;
+            background: pink;
+        }
+        
+        .header {
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .content {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            -background: red;
+            text-align: center;
+        }
+        
+        textarea {
+            width: 500px;
+            height: 200px;
+            resize: none;
+            outline: none;
+            font-size: 20px;
+        }
+        
+        button {
+            width: 80px;
+            height: 40px;
+        }
+        
+        ul {
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        li {
+            list-style: none;
+            margin: 10px auto;
+            width: 400px;
+            height: 100px;
+            background: orange;
+            position: relative;
+        }
+        
+        .del {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">
+            留言板
+        </div>
+        <div class="content">
+            <p><textarea rows="" cols="" class="text"></textarea></p>
+            <p><button type="" class="submit">提交</button></p>
+        </div>
+        <ul>
+            <li id="first">
+                <p>id</p>
+                <p>content</p>
+                <button class="del">删除</button>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // 创建数据库
+    var db = openDatabase('yyy', '1.0', 'nnn', 100 * 1024 * 1024);
+    // 创建表名
+    db.transaction(function(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS mm (id unique, content)');
+    });
+    // 匹配提交按钮
+    var obt = document.querySelector(".submit");
+    // 匹配文本内容
+    var tex = document.querySelector(".text")
+        // 初始化 id
+    var i = 0;
+    // 声明一个空字符串
+    var aa = "";
+    // 点击提交按钮，并插入数据
+    obt.onclick = function() {
+            //  获取文本数据
+            var msg = tex.value;
+            // 插入语句
+            db.transaction(function(tx) {
+                tx.executeSql('INSERT INTO mm (id,content) VALUES (?, ?)', [len, msg]);
+            });
+            // id 累加
+            alert("成功");
+            location.href = "text.html"
+
+        }
+        // 读取
+    db.transaction(function(tx) {
+        tx.executeSql('SELECT * FROM mm', [], function(tx, results) {
+            // 获取数据库数据数量
+            len = results.rows.length,
+                i;
+            // 遍历数据库数据
+            for (var i = 0; i < len; i++) {
+                // 将数据库内容累加
+                aa +=
+                    '<li id="first">\
+                        <p>' + results.rows.item(i).id + '</p>\
+                        <p>' + results.rows.item(i).content + '</p>\
+                        <button class="del">删除</button>\
+                    </li>';
+                // 将累加内容 展示在页面上
+                document.querySelector('ul').innerHTML = aa;
+            }
+
+            // 获取删除按钮
+            var dell = document.getElementsByClassName("del");
+            // 遍历删除按钮
+            for (var j = 0; j < dell.length; j++) {
+                // 备份删除按钮
+                dell[j].index = j;
+                // 删除按钮点击事件
+                dell[j].onclick = function() {
+                    // 点击哪个删除哪个
+                    var a = results.rows.item(this.index).id;
+                    // 删除语句
+                    db.transaction(function(tx) {
+                        tx.executeSql('DELETE FROM mm WHERE id=?', [a]);
+                    });
+                    alert("成功");
+                    location.href = "text.html";
+                }
+            }
+        })
+    });
+</script>
+
+</html>
