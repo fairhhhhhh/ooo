@@ -1,0 +1,19 @@
+*{margin: 0; padding: 0;list-style: none;}
+a{text-decoration: none;}
+input{border: 0; outline: none;}
+#login .aa{width: 300px;margin: 0 auto;}
+#login .item{width: 300px;height: 50px;margin: 20px 0;text-align: center;}
+.aa .logo{display: block;width: 113px;height: 195px;margin:0 auto;}
+.aa .username{border: 0; border-bottom: solid 1px #000; font-size: 18px;width: 265px;
+    height: 34px;background: url(http://www.iliangcang.com/images/nlphone.png) no-repeat 0px 6px;
+    padding-left: 35px;}
+.aa .password{ border: 0;border-bottom: solid 1px #000;font-size: 18px;width: 137px;
+    height: 34px;float: left;background: url(http://www.iliangcang.com/images/nlcode.png) no-repeat 2px 8px;
+    padding-left: 35px;}
+.aa .submit{ cursor: pointer; width: 300px; height: 50px;border: 0; background: #25292e;
+    font-size: 18px; font-weight: bold; color: #ffffff; margin-top: 9px;
+     margin-bottom: 30px;	}   
+.aa .bb{border: solid 1px #000;height: 35px;line-height: 34px;width: 110px;
+    font-size: 16px;margin-left: 12px;border-radius: 4px;color: #333;
+    float: right; cursor: pointer; text-align: center;}
+.aa .more { color: #000;font-size: 15px;}

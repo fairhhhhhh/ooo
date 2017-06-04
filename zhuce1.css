@@ -1,0 +1,77 @@
+*{margin: 0;padding: 0;list-style: none;}
+input{border: 0;outline: none;}
+body{ background: #999; width: 100%;height: 100%;}
+a{text-decoration: none; color:#fff;}
+#zhu .dd{width: 300px;margin: 0 auto;}
+.yan, .ma, .mi, .que{width: 300px;height: 50px;line-height:50px;margin: 20px 0;text-align: center;}
+.yan  .logo{display: block;width: 113px;height: 195px;margin:0 auto;}
+.ipone,.code1 ,.code2,.code3{ font-size: 14px; font-weight: bold;
+  color: #ffffff; opacity: 0.9;  filter: alpha(opacity=90);
+  padding-right: 20px;}
+.yan, .ma, .mi, .que{width:270px; background:#ccc;position: relative;}
+.item1 {
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    background: #25292e;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 9px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.vv{font-size:14px ;height: 30px;background: #ccc;float: left;margin: 10px 0 0 10px;}
+
+span{position: absolute;left:-80px ;top:0
+;}
+.item3 {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.item3>a{
+	float:right;
+}
+.quikLoginIcon{
+	width: 36px;
+    height: 36px;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+}
+.more{
+	float:right;
+}
+.more a:hover{color:#000000;}
+.icon_QQ_36 {
+    background: url(img/img/qqnormal.png) no-repeat;
+    margin-left: 5px;
+}
+.icon_QQ_36:hover{background: url(img/img/qqmouse.png) no-repeat;}
+
+.icon_sina_36 {
+    background: url(img/img/xinlangnormal.png) no-repeat;
+}
+.icon_sina_36:hover{background: url(img/img/xinlangmouse.png) no-repeat;}
+
+.icon_douban_36 {
+    background: url(img/img/doubannormal.png) no-repeat;
+}
+.icon_douban_36:hover{ background: url(img/img/doubanmouse.png) no-repeat;}
+
+.icon_qqwb_36 {
+    background: url(img/img/tengxunnormal.png) no-repeat;
+}
+.icon_qqwb_36:hover{ background: url(img/img/tengxunmouse.png) no-repeat;}
+ 
+.item2 .more{font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    right: 6px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ffffff;}
+
